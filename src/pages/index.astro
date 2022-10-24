@@ -1,9 +1,13 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Showcase from '../components/Showcase.astro';
+import Features from '../components/Features.astro';
 ---
 
 <Layout title="Mango Chutney">
 	<main>
+		<Features />
+		<Showcase showExtra={true} />
 		<h1>Hello World</h1>
 	</main>
 </Layout>

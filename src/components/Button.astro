@@ -1,0 +1,16 @@
+---
+const { btntext } = Astro.props;
+---
+
+<button id="button" class="btn">{btntext}</button>
+<script>
+	function handleClick() {
+		console.log('button clicked');
+	}
+	// document.getElementById('button').addEventListener('click', handleClick);
+	// document.querySelector('.btn').addEventListener('click', handleClick);
+	const buttons = document.querySelectorAll('.btn');
+	buttons.forEach((button) => {
+		button.addEventListener('click', handleClick);
+	});
+</script>

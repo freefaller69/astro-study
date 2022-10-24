@@ -3,12 +3,13 @@ export interface Props {
 	title: string;
 	body: string;
 	href: string;
+	dark?: boolean;
 }
 
-const { href, title, body } = Astro.props;
+const { href, title, body, dark = false } = Astro.props;
 ---
 
-<li class="link-card">
+<li class={`link-card ${dark && 'dark'}`}>
 	<a href={href}>
 		<h2>
 			{title}
@@ -72,5 +73,10 @@ const { href, title, body } = Astro.props;
 	.link-card:is(:hover, :focus-within) h2 span {
 		will-change: transform;
 		transform: translateX(2px);
+	}
+
+	.dark {
+		background-color: var(--color-primary);
+		color: #fff;
 	}
 </style>
